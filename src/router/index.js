@@ -1,15 +1,24 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
+import store from '../store'
 import Home from "../views/Home.vue";
+import Register from '../views/auth/register'
+import Login from '../views/auth/login'
+import Dashboard from '../views/backend/dashboard'
 
 Vue.use(VueRouter);
-
+var token = store.getters.Token
 const routes = [
-  {
-    path: "/",
-    name: "Home",
-    component: Home
-  },
+  {path: "/",name: "Home",component: Home},
+  {path: "/login",component: Login},
+  {path: "/register",component: Register},
+  {path: "/dashboard",component: Dashboard, beforeEnter(to, from, next) {
+    if (token){
+      next()
+    }else{
+      next('/login')
+    }
+  }},
   {
     path: "/about",
     name: "About",
