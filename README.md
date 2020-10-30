@@ -8,7 +8,7 @@ This repository is a simple template of an authentication system using vuejs, vu
 this projects has being design to use this tecknologies(vuejs,vuex,vuetify,axios etc) to work together and build a simple authenctication system. although this system will only work with a backend application system that embraces the authentication with jwt tokens that support single page application(SPAs)
 - passport for laravel
 - passport for nodejs
-- Golang - well jtw package!
+- Golang - well jwt package!
 
 ## the login file 
 <template>
